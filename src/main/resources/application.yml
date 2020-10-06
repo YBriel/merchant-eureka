@@ -1,0 +1,21 @@
+server:
+  port: 8899
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8899/eureka/
+  instance:
+    hostname: localhost
+
+###服务名称
+spring:
+  application:
+    name: merchant-eureka
+  security:
+    user:
+      name: mz
+      password: eurekaMz
+
